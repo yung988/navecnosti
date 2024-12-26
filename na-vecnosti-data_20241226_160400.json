@@ -1,0 +1,259 @@
+{
+  "accommodation_details": {
+    "name": "Na Věčnosti",
+    "title": "Nabídky v ubytování Na Věčnosti (Apartmán), Biskupice (Česko)",
+    "description": "Na Věčnosti se může pochlubit výhledem do zahrady. Bazilika svatého Prokopa se nachází přibližně 26 km odtud. V tomto apartmánu budete mít k dispozici bezplatné Wi-Fi a balkon.\n\nTento apartmán má 2 ložnice a kuchyň s lednicí, mikrovlnnou troubou a varnou konvicí. V tomto apartmánu jsou k dispozici ručníky a ložní prádlo.\n\nŽidovská čtvrť se nachází 25 km od ubytování Na Věčnosti a Zámek Vranov nad Dyjí je 32 km od ubytování. Letiště Brno Tuřany leží 70 km daleko.",
+    "rating": 9.1,
+    "total_reviews": 13,
+    "location": {
+      "address": "72",
+      "city": "Biskupice",
+      "postal_code": "675 57",
+      "country": "Česká republika"
+    },
+    "price_info": {
+      "current_price": null,
+      "original_price": null,
+      "currency": null
+    }
+  },
+  "room_details": {
+    "type": "Apartmán se 2 ložnicemi",
+    "size": "59 m²",
+    "capacity": 4,
+    "bed_types": [
+      "1 velká manželská postel",
+      "2 jednolůžkové postele"
+    ],
+    "max_occupancy": 4,
+    "amenities": []
+  },
+  "facilities": {
+    "amenities": [
+      "Nekuřácké pokoje",
+      "Wi-Fi zdarma",
+      "Parkování zdarma",
+      "Balkon",
+      "Kuchyň",
+      "Sprcha"
+    ],
+    "kitchen": [
+      "Jídelní stůl",
+      "Varná deska",
+      "Kuchyňské potřeby",
+      "Rychlovarná konvice",
+      "Mikrovlnná trouba",
+      "Lednička",
+      "Kuchyň"
+    ],
+    "bathroom": [
+      "Toaletní papír",
+      "Ručníky",
+      "Toaleta",
+      "Fén",
+      "Sprcha"
+    ],
+    "bedroom": [
+      "Povlečení",
+      "Skříň nebo šatna"
+    ],
+    "outdoor": [
+      "Balkon",
+      "Výhled do zahrady"
+    ],
+    "internet": "Bezdrátové internetové připojení je dostupné v celém hotelu zdarma.",
+    "parking": "Veřejné parkování je možné zdarma  na přilehlém místě (rezervace není nutná)."
+  },
+  "reviews": {
+    "overall_rating": 9.1,
+    "total_count": 13,
+    "categories": [
+      {
+        "name": "Personál",
+        "score": 9.6
+      },
+      {
+        "name": "Zařízení",
+        "score": 9.0
+      },
+      {
+        "name": "Čistota",
+        "score": 9.4
+      },
+      {
+        "name": "Pohodlí",
+        "score": 9.4
+      },
+      {
+        "name": "Poměr ceny a kvality",
+        "score": 9.4
+      },
+      {
+        "name": "Lokalita",
+        "score": 9.4
+      },
+      {
+        "name": "WiFi zdarma",
+        "score": 10
+      }
+    ],
+    "all_reviews": [
+      {
+        "author": "Alumont",
+        "nationality": "Česká republika",
+        "text": "Příjemná hostitelka, absolutní klid, příjemné prostředí, vybavená kuchyň. Doporučuji"
+      },
+      {
+        "author": "Dušana",
+        "nationality": "Česká republika",
+        "text": "Velmi milá majitelka, krásná příroda a málo turistů"
+      },
+      {
+        "author": "Pečenková",
+        "nationality": "Česká republika",
+        "text": "Prostorné pokoje, kuchyňka dostatečná.  Paní majitelka velmi milá, ochotná. Možnost využití zahrady. Místo ubytování klidné."
+      },
+      {
+        "author": "Kristýna",
+        "nationality": "Česká republika",
+        "text": "Naprostý klid. A hned na místě jsme pochopili, proč na věčnosti."
+      }
+    ]
+  },
+  "nearby": {
+    "places": [
+      {
+        "name": "Restaurace U Sucheho Certa",
+        "type": "Restaurace",
+        "distance": "7 km"
+      },
+      {
+        "name": "Pizzerie U Alči",
+        "type": "Restaurace",
+        "distance": "7 km"
+      },
+      {
+        "name": "Restaurace Radnice",
+        "type": "Restaurace",
+        "distance": "14 km"
+      },
+      {
+        "name": "Lyžařský vlek MLV 75",
+        "type": "Lyžařské vleky",
+        "distance": "38 km"
+      },
+      {
+        "name": "Lyžařský vlek VL - 500 Transporta",
+        "type": "Lyžařské vleky",
+        "distance": "39 km"
+      },
+      {
+        "name": "Zbraslav u Brna 1",
+        "type": "Lyžařské vleky",
+        "distance": "43 km"
+      },
+      {
+        "name": "Vlak Grešlové Mýto",
+        "type": "Veřejná doprava",
+        "distance": "14 km"
+      },
+      {
+        "name": "Vlak Blížkovice",
+        "type": "Veřejná doprava",
+        "distance": "15 km"
+      },
+      {
+        "name": "Letiště Brno Tuřany",
+        "type": "Nejbližší letiště",
+        "distance": "70 km"
+      }
+    ],
+    "attractions": []
+  },
+  "host": {
+    "name": "Petra",
+    "languages": [
+      "česky",
+      "německy",
+      "rusky",
+      "slovensky"
+    ],
+    "about": "Baví mě poznávat nové tváře, seznamovat se s lidmi. Miluji přírodu, procházky po okolí se svojí psicí. Je to francouzský buldoček, má ráda děti. Vyrábím přírodní mýdla a svíčky a nabízím možnost workshopů. Po dohodě i pro ubytované, jak dospělé tak děti.",
+    "description": "V místě je pivovar Gajdoš. V okolí vesnice se nachází přírodní park Rokytná se svými krásnými zákoutími a řekou Rokytnou. Jevišovická přehrada je 9 km daleko, možnost letního koupání a návštěvy zámku.\nV dosahu se nachází Jaroměřice n.R., přehrada Dalešice, Třebíč s židovským městem a Znojmo se svojí rotundou a jinými památkami.\nBěhem půl hodinky můžete být i na Vranovské pláži.\nProstě pokud chcete široký záběr, a přitom se vracet do klidu, je to místo přesně pro vás."
+  },
+  "policies": {
+    "check_in": "Od 16:00 do 20:00",
+    "check_out": "Od 7:00 do 10:00",
+    "cancellation": "Podmínky zrušení rezervace a platby předem mohou být pro jednotlivé typy ubytování různé.",
+    "children": [],
+    "pets": "Domácí zvířata nejsou povolena.",
+    "rules": [
+      "V tomto ubytování se nemohou konat rozlučky se svobodou a jiné podobné oslavy.",
+      "Kouření je zakázáno.",
+      "Večírky/akce nejsou povoleny."
+    ]
+  },
+  "property_highlights": [
+    "Celé ubytování jen pro vás",
+    "59 m² velikost",
+    "Parkování zdarma",
+    "Wi-Fi zdarma",
+    "Nekuřácké pokoje",
+    "Balkon",
+    "Kuchyň",
+    "Sprcha"
+  ],
+  "important_info": {
+    "check_in": "Od 16:00 do 20:00",
+    "check_out": "Od 7:00 do 10:00",
+    "policies": [],
+    "children_policies": [],
+    "pet_policies": []
+  },
+  "photos": [
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/557366183.jpg?k=6eb333901e7aa45f6b00deb4a5716f0c50fe7b39139ba61561c737ee2570334e&o=",
+      "description": "Balkón nebo terasa v ubytování Na Věčnosti",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max500/557366209.jpg?k=57d74000168039833edd251401105da18761fa3cef6ae8440f3e699ae5ba4314&o=",
+      "description": "Příroda nedaleko apartmánu",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max500/557366211.jpg?k=5e10be5247e54eb6dda3698ae055a67a5f7aca6cb466a34b309e274d6205dade&o=",
+      "description": "Posezení v ubytování Na Věčnosti",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max300/557366214.jpg?k=ebe86bbd19038432d5653eca345539ca7bb538ccad100432bc0a01108dabf45c&o=",
+      "description": "Zahrada ubytování Na Věčnosti",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max300/557366217.jpg?k=bd6079b492ccfca89a55a94f1348a617884bcfeb2c1153754afd1154702db5bb&o=",
+      "description": "Koupelna v ubytování Na Věčnosti",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max300/557366220.jpg?k=bee1b22659161e7684604fc7d5cbaddd5f6e1d48f50a001491eff330ed183f12&o=",
+      "description": "Kuchyň nebo kuchyňský kout v ubytování Na Věčnosti",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max300/557366221.jpg?k=3a3a89cfe063d200143a21ca3e9cd98899f8a45795650c58051cd9abf041a842&o=",
+      "description": "Posezení v ubytování Na Věčnosti",
+      "type": null
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max300/557366229.jpg?k=2dc931e8422b8f35226364e8640a11e9488c032f2e42c5144b626e1487bed322&o=",
+      "description": "Posezení v ubytování Na Věčnosti",
+      "type": null
+    }
+  ],
+  "additional_services": [],
+  "wifi_info": "Wi-Fi zdarma",
+  "parking_info": "Parkování zdarma",
+  "cleaning_info": null
+}
