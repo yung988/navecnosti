@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
@@ -9,7 +9,7 @@ import {
   ChevronLeft, ChevronRight,
   Utensils, Coffee, Wifi, Car, Bath, Bed, 
   TreePine, Wind, ChefHat, Mountain,
-  Clock, BedDouble, Home
+  Clock, BedDouble, Home, X
 } from 'lucide-react'
 
 interface AccommodationSectionProps {
@@ -66,13 +66,85 @@ function AmenitySection({ icon: Icon, title, items }: AmenityProps) {
 
 export function AccommodationSection({ data, className }: AccommodationSectionProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
   
   const images = [
     {
-      src: '/images/optimized/loznice-postel-v.webp',
-      alt: 'Ložnice s velkou postelí'
+      src: '/images/optimized/na-vecnosti-main.webp',
+      alt: 'Hlavní pohled na ubytování'
     },
-    // ... zbytek obrázků ...
+    {
+      src: '/images/optimized/loznice-postel-v.webp',
+      alt: 'Velká ložnice s postelí'
+    },
+    {
+      src: '/images/optimized/loznice-postel-v-okno.webp',
+      alt: 'Velká ložnice s výhledem z okna'
+    },
+    {
+      src: '/images/optimized/loznice-postel-v-front.webp',
+      alt: 'Velká ložnice zepředu'
+    },
+    {
+      src: '/images/optimized/loznice-okno.webp',
+      alt: 'Výhled z ložnice'
+    },
+    {
+      src: '/images/optimized/druha-loznice-postel-v.webp',
+      alt: 'Druhá ložnice s postelí'
+    },
+    {
+      src: '/images/optimized/druha-loznice-skrin.webp',
+      alt: 'Druhá ložnice se skříní'
+    },
+    {
+      src: '/images/optimized/druha-loznice-okno.webp',
+      alt: 'Druhá ložnice s oknem'
+    },
+    {
+      src: '/images/optimized/druha-loznice-kresilko-v.webp',
+      alt: 'Druhá ložnice s křesílkem'
+    },
+    {
+      src: '/images/optimized/kuchyn-linka.webp',
+      alt: 'Kuchyňská linka'
+    },
+    {
+      src: '/images/optimized/kuchyn-kreslo.webp',
+      alt: 'Posezení v kuchyni'
+    },
+    {
+      src: '/images/optimized/koupelna.webp',
+      alt: 'Koupelna'
+    },
+    {
+      src: '/images/optimized/koupelna-zachod.webp',
+      alt: 'Koupelna se záchodem'
+    },
+    {
+      src: '/images/optimized/koupelna-ommyvadlo-v.webp',
+      alt: 'Koupelna s umyvadlem'
+    },
+    {
+      src: '/images/optimized/balkon-main.webp',
+      alt: 'Hlavní pohled na balkon'
+    },
+    {
+      src: '/images/optimized/biskupice-balkon-v.webp',
+      alt: 'Výhled z balkonu na Biskupice'
+    },
+    {
+      src: '/images/optimized/zahrada-balkon.webp',
+      alt: 'Výhled na zahradu z balkonu'
+    },
+    {
+      src: '/images/optimized/dvorek.webp',
+      alt: 'Pohled na dvorek'
+    },
+    {
+      src: '/images/optimized/chodba-zidle-v.webp',
+      alt: 'Chodba se židlemi'
+    }
   ]
 
   const amenities = [
@@ -162,13 +234,14 @@ export function AccommodationSection({ data, className }: AccommodationSectionPr
                 {images.map((image, index) => (
                   <div 
                     key={index} 
-                    className="flex-none w-[calc(33.333%-0.5rem)] h-full snap-center relative"
+                    className="flex-none w-[calc(33.333%-0.5rem)] h-full snap-center relative cursor-pointer"
+                    onClick={() => setSelectedImage(index)}
                   >
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-cover rounded-lg hover:opacity-90 transition-opacity"
                       sizes="(max-width: 768px) 33vw, 266px"
                     />
                   </div>
@@ -177,40 +250,59 @@ export function AccommodationSection({ data, className }: AccommodationSectionPr
             </div>
           </Card>
 
-          {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-6 mb-16">
-            {highlights.map((item, index) => {
-              const Icon = item.icon
-              return (
-                <div 
-                  key={index}
-                  className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm"
-                >
-                  <Icon className="w-5 h-5 text-gray-700" />
-                  <span className="text-gray-600">{item.label}</span>
-                </div>
-              )
-            })}
-          </div>
+          {/* Modal pro zvětšený obrázek */}
+          {selectedImage !== null && (
+            <div 
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setSelectedImage(selectedImage > 0 ? selectedImage - 1 : images.length - 1)
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+              >
+                <ChevronLeft className="w-8 h-8" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setSelectedImage(selectedImage < images.length - 1 ? selectedImage + 1 : 0)
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+              >
+                <ChevronRight className="w-8 h-8" />
+              </button>
+              <div className="relative w-full max-w-6xl aspect-[4/3] mx-4" onClick={e => e.stopPropagation()}>
+                <Image
+                  src={images[selectedImage].src}
+                  alt={images[selectedImage].alt}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                  priority
+                />
+                <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-lg bg-black/50 px-4 py-2 rounded-full">
+                  {images[selectedImage].alt}
+                </p>
+              </div>
+            </div>
+          )}
 
-          {/* Detailní vybavení */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {amenities.map((amenity, index) => (
-              <AmenitySection
-                key={index}
-                icon={amenity.icon}
-                title={amenity.title}
-                items={amenity.items}
-              />
-            ))}
-          </div>
-
-          {/* Časy a pravidla */}
+          {/* Detaily a vybavení */}
           <Card className="mt-16 bg-white">
             <CardContent className="pt-6">
               <Tabs defaultValue="details" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-4">
                   <TabsTrigger value="details">Detaily</TabsTrigger>
+                  <TabsTrigger value="amenities">Vybavení</TabsTrigger>
                   <TabsTrigger value="rules">Pravidla</TabsTrigger>
                   <TabsTrigger value="times">Časy</TabsTrigger>
                 </TabsList>
@@ -224,6 +316,70 @@ export function AccommodationSection({ data, className }: AccommodationSectionPr
                     <div className="flex items-center gap-2">
                       <Home className="h-5 w-5" />
                       <span>Celé ubytování jen pro vás</span>
+                    </div>
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="amenities" className="mt-4">
+                  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <ChefHat className="h-5 w-5" />
+                        <h3 className="font-medium">Kuchyně</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {data.facilities.kitchen.map((item, index) => (
+                          <li key={index} className="flex items-center gap-2 text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-gray-300 rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Bath className="h-5 w-5" />
+                        <h3 className="font-medium">Koupelna</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {data.facilities.bathroom.map((item, index) => (
+                          <li key={index} className="flex items-center gap-2 text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-gray-300 rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Bed className="h-5 w-5" />
+                        <h3 className="font-medium">Ložnice</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {data.facilities.bedroom.map((item, index) => (
+                          <li key={index} className="flex items-center gap-2 text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-gray-300 rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <TreePine className="h-5 w-5" />
+                        <h3 className="font-medium">Venkovní prostory</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {data.facilities.outdoor.map((item, index) => (
+                          <li key={index} className="flex items-center gap-2 text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-gray-300 rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </TabsContent>
@@ -259,6 +415,22 @@ export function AccommodationSection({ data, className }: AccommodationSectionPr
               </Tabs>
             </CardContent>
           </Card>
+
+          {/* Highlights */}
+          <div className="flex flex-wrap justify-center gap-6 mt-16">
+            {highlights.map((item, index) => {
+              const Icon = item.icon
+              return (
+                <div 
+                  key={index}
+                  className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm"
+                >
+                  <Icon className="w-5 h-5 text-gray-700" />
+                  <span className="text-gray-600">{item.label}</span>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>
