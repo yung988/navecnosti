@@ -14,10 +14,10 @@ export function Contact() {
               </div>
               <h3 className="text-2xl font-serif mb-4">Telefon</h3>
               <a 
-                href="tel:+420777888999" 
+                href="tel:+420605033166" 
                 className="text-xl hover:text-gray-600 transition-colors"
               >
-                +420 777 888 999
+                +420 605 033 166
               </a>
             </div>
 
@@ -27,10 +27,10 @@ export function Contact() {
               </div>
               <h3 className="text-2xl font-serif mb-4">Email</h3>
               <a 
-                href="mailto:info@navecnosti.cz" 
+                href="mailto:petraklimesova21@seznam.cz" 
                 className="text-xl hover:text-gray-600 transition-colors"
               >
-                info@navecnosti.cz
+                petraklimesova21@seznam.cz
               </a>
             </div>
 

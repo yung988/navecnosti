@@ -16,15 +16,16 @@ interface ReviewsProps {
       }>;
     };
   };
+  className?: string;
 }
 
-export function Reviews({ data }: ReviewsProps) {
+export function Reviews({ data, className }: ReviewsProps) {
   const categories = data.reviews.categories
 
   const reviews = data.reviews.all_reviews
 
   return (
-    <section id="reviews" className="py-32 bg-white">
+    <section className={`py-32 ${className}`}>
       <div className="container mx-auto px-4">
         <h2 className="font-serif text-7xl md:text-8xl mb-16 text-center">Hodnocení</h2>
         

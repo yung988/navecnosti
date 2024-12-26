@@ -27,8 +27,7 @@ export function IntroSection() {
         trigger: sectionRef.current,
         start: "top center+=100",
         end: "center center",
-        scrub: 1,
-        markers: process.env.NODE_ENV === 'development',
+        scrub: 1
       }
     })
 

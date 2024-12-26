@@ -33,7 +33,7 @@ export function HostSection() {
                 alt="Majitelka ubytování Na Věčnosti"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="rounded-lg Hobject-cover"
+                className="rounded-lg object-cover object-center"
               />
             </div>
           </div>

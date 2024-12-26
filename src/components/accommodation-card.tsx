@@ -41,9 +41,10 @@ interface AccommodationCardProps {
     };
     property_highlights: string[];
   };
+  className?: string;
 }
 
-export function AccommodationCard({ data }: AccommodationCardProps) {
+export function AccommodationCard({ data, className }: AccommodationCardProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   
   const images = [
@@ -124,7 +125,7 @@ export function AccommodationCard({ data }: AccommodationCardProps) {
   }
 
   return (
-    <section className="py-16">
+    <section id="accommodation" className={`py-16 scroll-mt-24 ${className}`}>
       <Card className="w-full max-w-6xl mx-auto bg-white">
         <CardHeader className="space-y-2">
           <div className="flex justify-between items-start">

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 
 interface SmoothScrollProviderProps {
   children: React.ReactNode
@@ -21,13 +21,12 @@ export function SmoothScrollProvider({
   useEffect(() => {
     const lenis = new Lenis({
       duration: 0.2,
-      easing: (t) => t,
+      easing: (t: number) => t,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       touchMultiplier: 2,
       wheelMultiplier: 2,
-      normalizeWheel: true,
     })
 
     lenisInstance = lenis
