@@ -25,67 +25,49 @@ if (typeof window !== 'undefined') {
 const amenities = [
   {
     icon: Bed,
-    title: "Pohodlné spaní",
-    description: "Dvě ložnice s kvalitními matracemi a luxusním povlečením",
+    title: "Ložnice",
+    description: "1 velká manželská postel, 2 jednolůžkové postele, skříň nebo šatna, povlečení",
   },
   {
     icon: Bath,
-    title: "Moderní koupelna",
-    description: "Prostorná koupelna s vanou, sprchou a toaletou",
+    title: "Koupelna",
+    description: "Sprcha, toaleta, fén, ručníky, toaletní papír",
   },
   {
     icon: Wifi,
-    title: "Rychlé Wi-Fi",
-    description: "Vysokorychlostní internet v celém objektu",
-  },
-  {
-    icon: Tv,
-    title: "Smart TV",
-    description: '65" televizor s Netflix a dalšími streamovacími službami',
-  },
-  {
-    icon: Coffee,
-    title: "Vybavená kuchyně",
-    description: "Moderní spotřebiče včetně kávovaru a myčky",
+    title: "Internet",
+    description: "Bezdrátové internetové připojení je dostupné v celém hotelu zdarma",
   },
   {
     icon: UtensilsCrossed,
-    title: "Venkovní grilování",
-    description: "Plynový gril a posezení na zahradě",
+    title: "Kuchyně",
+    description: "Jídelní stůl, varná deska, kuchyňské potřeby, rychlovarná konvice, mikrovlnná trouba, lednička",
   },
   {
     icon: Car,
     title: "Parkování",
-    description: "Bezpečné parkování přímo u domu",
+    description: "Veřejné parkování je možné zdarma na přilehlém místě (rezervace není nutná)",
   },
   {
     icon: Trees,
-    title: "Zahrada",
-    description: "Rozlehlá zahrada s ovocnými stromy a bylinkami",
-  },
-  {
-    icon: Dog,
-    title: "Mazlíčci vítáni",
-    description: "Rádi uvítáme vaše čtyřnohé přátele",
-  },
-  {
-    icon: Baby,
-    title: "Vhodné pro děti",
-    description: "Dětská postýlka a vysoká židle k dispozici",
-  },
-  {
-    icon: Gamepad2,
-    title: "Herní vybavení",
-    description: "Stolní hry a PlayStation pro zábavu",
-  },
-  {
-    icon: Dumbbell,
-    title: "Fitness",
-    description: "Základní fitness vybavení pro cvičení",
-  },
+    title: "Venkovní prostor",
+    description: "Balkon s výhledem do zahrady",
+  }
 ]
 
-export function DetailedAmenities() {
+interface DetailedAmenitiesProps {
+  data: {
+    facilities: {
+      amenities: string[];
+      kitchen: string[];
+      bathroom: string[];
+      bedroom: string[];
+      outdoor: string[];
+    };
+  };
+}
+
+export function DetailedAmenities({ data }: DetailedAmenitiesProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
@@ -125,30 +107,32 @@ export function DetailedAmenities() {
   return (
     <section
       ref={sectionRef}
-      className="container mx-auto px-4 py-24 md:py-32"
+      className="py-16"
       id="amenities"
     >
-      <h2
-        data-title
-        className="mb-16 text-center text-3xl font-bold md:text-4xl lg:text-5xl"
-      >
-        Vybavení a služby
-      </h2>
+      <div className="w-full max-w-4xl mx-auto">
+        <h2
+          data-title
+          className="mb-16 text-center text-3xl font-bold md:text-4xl lg:text-5xl"
+        >
+          Vybavení a služby
+        </h2>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {amenities.map((amenity, index) => (
-          <div
-            key={amenity.title}
-            ref={(el) => {
-              cardsRef.current[index] = el
-            }}
-            className="rounded-2xl bg-gray-50 p-6 shadow-sm transition-shadow hover:shadow-md"
-          >
-            <amenity.icon className="mb-4 h-8 w-8 text-gray-900" />
-            <h3 className="mb-2 text-xl font-semibold">{amenity.title}</h3>
-            <p className="text-gray-600">{amenity.description}</p>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {amenities.map((amenity, index) => (
+            <div
+              key={amenity.title}
+              ref={(el) => {
+                cardsRef.current[index] = el
+              }}
+              className="rounded-2xl bg-gray-50 p-6 shadow-sm transition-shadow hover:shadow-md"
+            >
+              <amenity.icon className="mb-4 h-8 w-8 text-gray-900" />
+              <h3 className="mb-2 text-xl font-semibold">{amenity.title}</h3>
+              <p className="text-gray-600">{amenity.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

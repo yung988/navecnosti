@@ -1,23 +1,54 @@
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 export function Contact() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-32 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-4xl mb-12">Kontakt</h2>
-          <div className="space-y-6">
-            <div className="flex items-center justify-center">
-              <MapPin className="w-6 h-6 mr-3" />
-              <p>Biskupice 72, 675 57, Česká republika</p>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-7xl md:text-8xl mb-16 text-center">Kontakt</h2>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <Phone className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-2xl font-serif mb-4">Telefon</h3>
+              <a 
+                href="tel:+420777888999" 
+                className="text-xl hover:text-gray-600 transition-colors"
+              >
+                +420 777 888 999
+              </a>
             </div>
-            <div className="flex items-center justify-center">
-              <Phone className="w-6 h-6 mr-3" />
-              <p>+420 XXX XXX XXX</p>
+
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <Mail className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-2xl font-serif mb-4">Email</h3>
+              <a 
+                href="mailto:info@navecnosti.cz" 
+                className="text-xl hover:text-gray-600 transition-colors"
+              >
+                info@navecnosti.cz
+              </a>
             </div>
-            <div className="flex items-center justify-center">
-              <Mail className="w-6 h-6 mr-3" />
-              <p>navecnosti@example.com</p>
+
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <MapPin className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-2xl font-serif mb-4">Adresa</h3>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Na+Věčnosti,+Biskupice+72,+675+57"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl hover:text-gray-600 transition-colors"
+              >
+                Na Věčnosti<br />
+                Biskupice 72<br />
+                675 57
+              </a>
             </div>
           </div>
         </div>

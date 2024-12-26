@@ -1,38 +1,27 @@
 import { Star } from 'lucide-react'
 
-export function Reviews() {
-  const categories = [
-    { name: "Personál", score: 9.6 },
-    { name: "Zařízení", score: 9.0 },
-    { name: "Čistota", score: 9.4 },
-    { name: "Pohodlí", score: 9.4 },
-    { name: "Poměr ceny a kvality", score: 9.4 },
-    { name: "Lokalita", score: 9.4 },
-    { name: "WiFi zdarma", score: 10 }
-  ]
+interface ReviewsProps {
+  data: {
+    reviews: {
+      overall_rating: number;
+      total_count: number;
+      categories: Array<{
+        name: string;
+        score: number;
+      }>;
+      all_reviews: Array<{
+        author: string;
+        nationality: string;
+        text: string;
+      }>;
+    };
+  };
+}
 
-  const reviews = [
-    {
-      author: "Alumont",
-      nationality: "Česká republika",
-      text: "Příjemná hostitelka, absolutní klid, příjemné prostředí, vybavená kuchyň. Doporučuji"
-    },
-    {
-      author: "Dušana",
-      nationality: "Česká republika",
-      text: "Velmi milá majitelka, krásná příroda a málo turistů"
-    },
-    {
-      author: "Pečenková",
-      nationality: "Česká republika",
-      text: "Prostorné pokoje, kuchyňka dostatečná. Paní majitelka velmi milá, ochotná. Možnost využití zahrady. Místo ubytování klidné."
-    },
-    {
-      author: "Kristýna",
-      nationality: "Česká republika",
-      text: "Naprostý klid. A hned na místě jsme pochopili, proč na věčnosti."
-    }
-  ]
+export function Reviews({ data }: ReviewsProps) {
+  const categories = data.reviews.categories
+
+  const reviews = data.reviews.all_reviews
 
   return (
     <section id="reviews" className="py-32 bg-white">

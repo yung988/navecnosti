@@ -2,12 +2,13 @@ import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/Hero'
 import { IntroSection } from '@/components/sections/intro-section'
 import { DetailedAmenities } from '@/components/sections/detailed-amenities'
-import { GallerySection } from '@/components/sections/gallery-section'
+import { AccommodationCard } from '@/components/sections/accommodation-card'
 import { Reviews } from '@/components/Reviews'
 import { NearbyAttractions } from '@/components/NearbyAttractions'
 import { HostSection } from '@/components/sections/host-section'
 import { Policies } from '@/components/Policies'
 import { Contact } from '@/components/Contact'
+import accommodationData from '../../na-vecnosti-data_20241226_160400.json'
 
 export default function Home() {
   return (
@@ -15,12 +16,12 @@ export default function Home() {
       <Navigation />
       <Hero />
       <IntroSection />
-      <GallerySection />
-      <DetailedAmenities />
-      <Reviews />
-      <NearbyAttractions />
-      <HostSection />
-      <Policies />
+      <AccommodationCard data={accommodationData} />
+      <DetailedAmenities data={accommodationData} />
+      <Reviews data={accommodationData} />
+      <NearbyAttractions data={accommodationData} />
+      <HostSection data={accommodationData} />
+      <Policies data={accommodationData} />
       <Contact />
     </main>
   )

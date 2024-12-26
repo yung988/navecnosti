@@ -9,42 +9,16 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-const images = [
-  {
-    url: "/images/optimized/loznice-cela-s.webp",
-    alt: "Hlavní ložnice",
-  },
-  {
-    url: "/images/optimized/loznice-postel-v.webp",
-    alt: "Postel v hlavní ložnici",
-  },
-  {
-    url: "/images/optimized/druha-loznice-postel-v.webp",
-    alt: "Druhá ložnice",
-  },
-  {
-    url: "/images/optimized/druha-loznice-kresilka.webp",
-    alt: "Posezení v druhé ložnici",
-  },
-  {
-    url: "/images/optimized/koupelna.webp",
-    alt: "Koupelna",
-  },
-  {
-    url: "/images/optimized/sprcha.webp",
-    alt: "Sprchový kout",
-  },
-  {
-    url: "/images/optimized/koupelna-ommyvadlo-v.webp",
-    alt: "Umyvadlo v koupelně",
-  },
-  {
-    url: "/images/optimized/kuchyn-s.webp",
-    alt: "Kuchyň",
-  },
-]
+interface GallerySectionProps {
+  data: {
+    photos: Array<{
+      url: string;
+      description: string;
+    }>;
+  };
+}
 
-export function GallerySection() {
+export function GallerySection({ data }: GallerySectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
@@ -182,21 +156,21 @@ export function GallerySection() {
           ref={galleryRef}
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
-          {images.map((image, index) => (
+          {data.photos.map((image, index) => (
             <div
               key={image.url}
               className="group relative aspect-[4/5] overflow-hidden rounded-2xl will-change-transform"
             >
               <Image
                 src={image.url}
-                alt={image.alt}
+                alt={image.description}
                 fill
                 className="object-cover will-change-transform"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="overlay absolute inset-0 bg-black/20 transition-opacity duration-300" />
               <div className="caption absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-4 opacity-0">
-                <p className="font-serif text-xl text-white">{image.alt}</p>
+                <p className="font-serif text-xl text-white">{image.description}</p>
               </div>
             </div>
           ))}
